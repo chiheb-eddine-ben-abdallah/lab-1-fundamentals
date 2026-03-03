@@ -2,27 +2,51 @@
 export default function Contact({ email, github, linkedin }) {
     return (
         <section
+            id="contact"
+            className="section"
             style={{
-                background: 'linear-gradient(135deg, #282c34, #1e293b)',
-                color: 'white',
-                padding: '80px 20px',
+                padding: '140px 0',
                 textAlign: 'center',
             }}
         >
-            <h2 style={{ marginBottom: '40px', fontSize: '2.2rem' }}>Get in Touch</h2>
-            <p style={{ fontSize: '1.3rem', marginBottom: '30px' }}>
-                Feel free to reach out for collaborations or questions!
-            </p>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', flexWrap: 'wrap' }}>
-                <a href={`mailto:${email}`} style={{ color: 'var(--primary)', fontSize: '1.2rem', textDecoration: 'none' }}>
-                    ✉️ {email}
-                </a>
-                <a href={github} target="_blank" style={{ color: 'var(--primary)', fontSize: '1.2rem', textDecoration: 'none' }}>
-                    GitHub
-                </a>
-                <a href={linkedin} target="_blank" style={{ color: 'var(--primary)', fontSize: '1.2rem', textDecoration: 'none' }}>
-                    LinkedIn
-                </a>
+            <div
+                className="card"
+                style={{
+                    padding: '100px 40px',
+                    borderColor: 'var(--secondary)',
+                    boxShadow: '0 0 50px var(--secondary-glow)',
+                    maxWidth: '900px',
+                    margin: '0 auto'
+                }}
+            >
+                <h2 style={{ fontSize: '4rem', marginBottom: '30px', fontWeight: 800, color: 'white' }}>
+                    Initiate <span className="neon-title">Connection</span>
+                </h2>
+                <p style={{ fontSize: '1.4rem', color: 'var(--text-dim)', marginBottom: '80px', maxWidth: '600px', margin: '0 auto 80px', fontWeight: 300 }}>
+                    Official channels for professional inquiries and collaborations. Reach out through the infrastructure below.
+                </p>
+
+                <div style={{ display: 'flex', gap: '30px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                    <a href={`mailto:${email}`} className="btn-luxury" style={{ minWidth: '220px' }}>
+                        EMAIL NODE
+                    </a>
+                    <a href={github} target="_blank" className="btn-luxury" style={{
+                        background: 'transparent',
+                        border: '1px solid var(--secondary)',
+                        color: 'var(--secondary)',
+                        boxShadow: 'none',
+                    }}>
+                        GITHUB
+                    </a>
+                    <a href={linkedin} target="_blank" className="btn-luxury" style={{
+                        background: 'transparent',
+                        border: '1px solid var(--primary)',
+                        color: 'var(--primary)',
+                        boxShadow: 'none',
+                    }}>
+                        LINKEDIN
+                    </a>
+                </div>
             </div>
         </section>
     );

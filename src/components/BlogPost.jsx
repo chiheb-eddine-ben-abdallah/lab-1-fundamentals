@@ -10,12 +10,12 @@ export default function BlogPost({
     date,
 }) {
     return (
-        <div className="card" style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <h1 style={{ fontSize: '2.4rem', marginBottom: '24px', color: '#282c34' }}>
+        <div className="card" style={{ maxWidth: '900px', margin: '0 auto', padding: '60px' }}>
+            <h1 className="neon-title" style={{ fontSize: '3.5rem', marginBottom: '40px', lineHeight: '1.1', fontWeight: 800 }}>
                 {title}
             </h1>
 
-            <div style={{ marginBottom: '32px' }}>
+            <div style={{ marginBottom: '60px' }}>
                 <UserCard
                     name={authorName}
                     email={authorEmail}
@@ -23,16 +23,25 @@ export default function BlogPost({
                 />
             </div>
 
-            <div style={{ fontSize: '1.15rem', lineHeight: 1.7, color: '#444', marginBottom: '32px' }}>
+            <div style={{
+                fontSize: '1.4rem',
+                lineHeight: 1.8,
+                color: 'var(--text-dim)',
+                marginBottom: '40px',
+                paddingLeft: '30px',
+                borderLeft: '2px solid var(--primary)'
+            }}>
                 {content}
             </div>
 
             <footer style={{
-                fontSize: '0.95rem',
-                color: '#777',
+                fontSize: '1rem',
+                color: 'var(--text-dim)',
                 textAlign: 'right',
-                borderTop: '1px solid #eee',
-                paddingTop: '16px',
+                borderTop: '1px solid rgba(255,255,255,0.05)',
+                paddingTop: '30px',
+                opacity: 0.6,
+                letterSpacing: '1px'
             }}>
                 Published on {date}
             </footer>

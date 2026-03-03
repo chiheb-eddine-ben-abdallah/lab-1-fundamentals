@@ -1,16 +1,27 @@
 // src/components/Greeting.jsx
 export default function Greeting() {
+    const hours = new Date().getHours();
+    let message = "Good day, Cyber Developer.";
+
+    if (hours < 12) {
+        message = "Good morning, initiate.";
+    } else if (hours < 18) {
+        message = "Good afternoon, developer.";
+    } else {
+        message = "Good evening, architect.";
+    }
+
     return (
-        <div className="card" style={{ maxWidth: '600px', margin: '0 auto' }}>
-            <h1 style={{ color: 'var(--primary)', marginBottom: '16px' }}>
-                Welcome to React!
-            </h1>
-            <h2 style={{ color: '#555', marginBottom: '20px' }}>
-                This is my first component
+        <div style={{ textAlign: 'center' }}>
+            <h2 className="neon-title" style={{
+                fontSize: '3rem',
+                margin: '20px 0',
+                fontWeight: 800,
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+            }}>
+                {message}
             </h2>
-            <p style={{ color: '#444' }}>
-                Fun fact: React was created by Jordan Walke at Facebook in 2011 and open-sourced in 2013.
-            </p>
         </div>
     );
 }
